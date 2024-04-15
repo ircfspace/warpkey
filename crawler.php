@@ -1,7 +1,7 @@
 <?php
 
     $url = 'https://t.me/s/warpplus';
-    $pattern = '/🔐 Key: ([A-Za-z0-9\-]+) \(\d+ GB\)/';
+    $pattern = '/Key: ([A-Za-z0-9\-]+) \(\d+\)/';
     $getData = file_get_contents($url);
 
     $keys = [];
@@ -18,4 +18,4 @@
         $html .= $key.( $key !== end($key) ? "\n" : "");
 
     }
-    file_put_contents("warp+", $html);
+    file_put_contents("list", $html);
