@@ -27,7 +27,7 @@
             $lite .= $key.( $key !== end($keys) ? "\n" : "");
             $i++;
         }
-        file_put_contents("keys/lite", $lite);
+        file_put_contents("plus/lite", $lite);
     }
 
     $i = 0;
@@ -41,5 +41,5 @@
             $full .= $key.( $key !== end($keys) ? "\n" : "");
             $i++;
         }
-        file_put_contents("keys/full", $full);
+        file_put_contents("plus/full", $full);
     }
