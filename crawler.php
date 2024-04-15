@@ -6,7 +6,7 @@
 
     $keys = [];
     if ( preg_match_all($pattern, $getData, $matches) ) {
-        $keys = implode('', $matches[1]);
+        $keys = $matches[1];
     }
 
     $i = 0;
