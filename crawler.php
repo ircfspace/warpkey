@@ -1,13 +1,20 @@
 <?php
 
-    $url = 'https://t.me/s/warpplus';
-    $pattern = '/<code>([A-Za-z0-9-]+)<\/code>/';
-    $getData = file_get_contents($url);
+    $source = [
+        'https://t.me/s/warpplus',
+        'https://t.me/s/warppluscn',
+        'https://t.me/s/warpPlusHome',
+    ];
 
     $keys = [];
-    if ( preg_match_all($pattern, $getData, $matches) ) {
-        $keys = $matches[1];
+    $pattern = '/<code>([A-Za-z0-9-]+)<\/code>/';
+    foreach($source as $url) {
+        $getData = file_get_contents($url);
+        if ( preg_match_all($pattern, $getData, $matches) ) {
+            $keys = array_merge($keys, $matches[1]);
+        }
     }
+    $keys = array_rand($keys);
 
     $i = 0;
     $html = "";
