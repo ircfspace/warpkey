@@ -14,7 +14,7 @@
             $keys = array_merge($keys, $matches[1]);
         }
     }
-    
+
     $keys = array_unique($keys);
     if ( count($keys) > 0 ) {
 
@@ -29,6 +29,7 @@
             $i++;
         }
         file_put_contents("plus/lite", $lite);
+        
         $x = 0;
         $full = "";
         foreach($keys as $key) {
