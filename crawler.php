@@ -18,6 +18,6 @@
             break;
         }
         $html .= $key.( $key !== end($key) ? "\n" : "");
-
+        $i++;
     }
     file_put_contents("list", $html);
