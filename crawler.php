@@ -17,11 +17,14 @@
 
     $html = "";
     $i = 0;
-    foreach($keys as $key) {
-        if ( $i >= 15 ) {
-            break;
+    if ( count($keys) > 0 ) {
+        shuffle($keys);
+        foreach($keys as $key) {
+            if ( $i >= 15 ) {
+                break;
+            }
+            $html .= $key.( $key !== end($keys) ? "\n" : "");
+            $i++;
         }
-        $html .= $key.( $key !== end($keys) ? "\n" : "");
-        $i++;
+        file_put_contents("list", $html);
     }
-    file_put_contents("list", $html);
