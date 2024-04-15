@@ -18,6 +18,17 @@
     $keys = array_unique($keys);
     if ( count($keys) > 0 ) {
 
+        $x = 0;
+        $full = "";
+        foreach($keys as $key) {
+            if ( $x >= 100 ) {
+                break;
+            }
+            $full .= $key.( $key !== end($keys) ? "\n" : "");
+            $x++;
+        }
+        file_put_contents("plus/full", $full);
+
         $i = 0;
         $lite = "";
         shuffle($keys);
@@ -29,16 +40,5 @@
             $i++;
         }
         file_put_contents("plus/lite", $lite);
-        
-        $x = 0;
-        $full = "";
-        foreach($keys as $key) {
-            if ( $x >= 100 ) {
-                break;
-            }
-            $full .= $key.( $key !== end($keys) ? "\n" : "");
-            $x++;
-        }
-        file_put_contents("plus/full", $full);
 
     }
