@@ -11,13 +11,13 @@
 
     file_put_contents("list", $matches[1];die;
 
-    $i = 1;
+    $i = 0;
     $html = "";
     foreach($keys as $key) {
-        if ( $i > 15 ) {
+        if ( $i >= 15 ) {
             break;
         }
-        $html .= $key.( $key !== end($key) ? "\n" : "");
+        $html .= $key.( $key !== end($keys) ? "\n" : "");
         $i++;
     }
     file_put_contents("list", $html);
