@@ -15,8 +15,8 @@
         }
     }
 
-    $html = "";
     $i = 0;
+    $lite = "";
     if ( count($keys) > 0 ) {
         $keys = array_unique($keys);
         shuffle($keys);
@@ -24,8 +24,22 @@
             if ( $i >= 15 ) {
                 break;
             }
-            $html .= $key.( $key !== end($keys) ? "\n" : "");
+            $lite .= $key.( $key !== end($keys) ? "\n" : "");
             $i++;
         }
-        file_put_contents("list", $html);
+        file_put_contents("list/lite", $lite);
+    }
+
+    $i = 0;
+    $full = "";
+    if ( count($keys) > 0 ) {
+        $keys = array_unique($keys);
+        foreach($keys as $key) {
+            if ( $i >= 100 ) {
+                break;
+            }
+            $full .= $key.( $key !== end($keys) ? "\n" : "");
+            $i++;
+        }
+        file_put_contents("list/full", $full);
     }
