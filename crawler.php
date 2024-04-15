@@ -14,11 +14,12 @@
             $keys = array_merge($keys, $matches[1]);
         }
     }
-
-    $i = 0;
-    $lite = "";
+    
+    $keys = array_unique($keys);
     if ( count($keys) > 0 ) {
-        $keys = array_unique($keys);
+
+        $i = 0;
+        $lite = "";
         shuffle($keys);
         foreach($keys as $key) {
             if ( $i >= 15 ) {
@@ -28,18 +29,15 @@
             $i++;
         }
         file_put_contents("plus/lite", $lite);
-    }
-
-    $i = 0;
-    $full = "";
-    if ( count($keys) > 0 ) {
-        $keys = array_unique($keys);
+        $x = 0;
+        $full = "";
         foreach($keys as $key) {
-            if ( $i >= 100 ) {
+            if ( $x >= 100 ) {
                 break;
             }
             $full .= $key.( $key !== end($keys) ? "\n" : "");
-            $i++;
+            $x++;
         }
         file_put_contents("plus/full", $full);
+
     }
