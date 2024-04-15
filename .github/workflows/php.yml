@@ -1,4 +1,4 @@
-name: "WARP+ KEYS"
+name: "Collect WARP+ KEYS"
 
 on:
   workflow_dispatch:
