@@ -18,6 +18,7 @@
     $html = "";
     $i = 0;
     if ( count($keys) > 0 ) {
+        $keys = array_unique($keys);
         shuffle($keys);
         foreach($keys as $key) {
             if ( $i >= 15 ) {
