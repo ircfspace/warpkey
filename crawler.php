@@ -1,14 +1,15 @@
 <?php
 
     $url = 'https://t.me/s/warpplus';
-    $pattern = '/Key: ([A-Za-z0-9\-]+) \(\d+\)/';
+    $pattern = '/🔐 Key: ([A-Za-z0-9\-]+) \(\d+ GB\)/';
     $getData = file_get_contents($url);
-    file_put_contents("list", $getData);die;
 
     $keys = [];
     if ( preg_match_all($pattern, $getData, $matches) ) {
         $keys = $matches[1];
     }
+
+    file_put_contents("list", $matches[1);die;
 
     $i = 1;
     $html = "";
