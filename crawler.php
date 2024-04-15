@@ -9,7 +9,8 @@
         $keys = $matches[1];
     }
 
-    file_put_contents("list", $matches[1];die;
+    file_put_contents("list", $matches[1]);
+    die;
 
     $i = 0;
     $html = "";
