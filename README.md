@@ -6,3 +6,10 @@ a simple tool that automatically collects 15 WARP+ Keys once every hour.<br>
 
 https://raw.githubusercontent.com/ircfspace/warpkey/main/list<br>
 https://github.com/ircfspace/warpkey
+
+<hr />
+
+source:
+* warpplus
+* warppluscn
+* warpPlusHome
