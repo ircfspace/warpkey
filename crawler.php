@@ -14,10 +14,14 @@
             $keys = array_merge($keys, $matches[1]);
         }
     }
-    
+
     $html = "";
-    $keys = array_rand($keys, 15);
+    $i = 0;
     foreach($keys as $key) {
+        if ( $i >= 15 ) {
+            break;
+        }
         $html .= $key.( $key !== end($keys) ? "\n" : "");
+        $i++;
     }
     file_put_contents("list", $html);
