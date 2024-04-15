@@ -6,11 +6,8 @@
 
     $keys = [];
     if ( preg_match_all($pattern, $getData, $matches) ) {
-        $keys = $matches[1];
+        $keys = implode('', $matches[1]);
     }
-
-    file_put_contents("list", $matches[1]);
-    die;
 
     $i = 0;
     $html = "";
